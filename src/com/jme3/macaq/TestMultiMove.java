@@ -14,10 +14,10 @@ import com.jme3.scene.Node;
  *
  * @author Rickard <neph1 @ github>
  */
-public class MultiMove extends SimpleApplication{
+public class TestMultiMove extends SimpleApplication{
     
     public static void main(String[] args) {
-        MultiMove app = new MultiMove();
+        TestMultiMove app = new TestMultiMove();
         app.start();
     }
     

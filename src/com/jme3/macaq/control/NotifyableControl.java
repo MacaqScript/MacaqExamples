@@ -22,7 +22,7 @@ import java.util.Map;
 public class NotifyableControl extends MacaqControl implements Notifyable{
 
     private static final float MIN_DISTANCE = 0.1f;
-    private float speed = 0.5f;
+    private final float speed = 1f;
     
     private LogicInConnection message; // this is the connection through which the target is received
     private LogicOutConnection onPerformed; // this is used to send back a signal when movement is done
