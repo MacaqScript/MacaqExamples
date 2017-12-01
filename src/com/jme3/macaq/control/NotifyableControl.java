@@ -9,8 +9,11 @@ import com.jme3.macaq.base.LogicInConnection;
 import com.jme3.macaq.base.LogicOutConnection;
 import com.jme3.macaq.control.util.ControlUtil;
 import com.jme3.math.Vector3f;
+import com.jme3.renderer.RenderManager;
+import com.jme3.renderer.ViewPort;
 import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
+import com.jme3.scene.control.AbstractControl;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +22,7 @@ import java.util.Map;
  * Expects the args map to contain a "message" entry, a String with the name of the target spatial to move towards.
  * @author Rickard <neph1 @ github>
  */
-public class NotifyableControl extends MacaqControl implements Notifyable{
+public class NotifyableControl extends AbstractControl implements Notifyable{
 
     private static final float MIN_DISTANCE = 0.1f;
     private final float speed = 1f;
@@ -32,7 +35,6 @@ public class NotifyableControl extends MacaqControl implements Notifyable{
     
     @Override
     protected void controlUpdate(float tpf) {
-        super.controlUpdate(tpf);
         if(currentTarget != null){
             Vector3f targetLocation = currentTarget.getLocalTranslation();
             if(spatial.getLocalTranslation().distance(targetLocation) > MIN_DISTANCE){
@@ -67,6 +69,10 @@ public class NotifyableControl extends MacaqControl implements Notifyable{
             onPerformed = new LogicOutConnection("onPerformed");
         }
         return onPerformed;
+    }
+
+    @Override
+    protected void controlRender(RenderManager rm, ViewPort vp) {
     }
     
 }
