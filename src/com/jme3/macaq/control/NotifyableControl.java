@@ -7,6 +7,7 @@ package com.jme3.macaq.control;
 
 import com.jme3.macaq.base.LogicInConnection;
 import com.jme3.macaq.base.LogicOutConnection;
+import com.jme3.macaq.control.Notifyable;
 import com.jme3.macaq.control.util.ControlUtil;
 import com.jme3.math.Vector3f;
 import com.jme3.renderer.RenderManager;
